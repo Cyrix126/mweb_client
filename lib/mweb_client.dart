@@ -8,10 +8,10 @@ class MwebClient {
   RpcClient _rpcClient;
   ClientChannel _channel;
 
-  MwebClient._(this._channel, this._rpcClient);
+  MwebClient(this._channel, this._rpcClient);
 
   /// Create a new client without TLS, to only use with a local mwebd server
-  factory MwebClient(String host, int port) {
+  factory MwebClient.fromHost(String host, int port) {
     final channel = ClientChannel(
       host,
       port: port,
@@ -20,7 +20,7 @@ class MwebClient {
 
     final serviceClient = RpcClient(channel);
 
-    return MwebClient._(channel, serviceClient);
+    return MwebClient(channel, serviceClient);
   }
 
   /// Get the address of an account from an index
