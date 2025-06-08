@@ -85,9 +85,10 @@ class MwebClient {
     }
   }
 
-  // Get the sync status of the daemon. The block headers are
-  // synced first, followed by a subset of MWEB headers, and
-  // finally the MWEB utxo set.
+  /// Get the sync status of the daemon. The block headers are
+  ///
+  /// synced first, followed by a subset of MWEB headers, and
+  /// finally the MWEB utxo set.
   Future<StatusResponse> status(StatusRequest request) async {
     try {
       return await _rpcClient.status(request);
