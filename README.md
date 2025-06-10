@@ -7,7 +7,7 @@ mweb client library to interact with a mweb daemon.
 - [x] MWEB addresses of an account
 - [x] Spent outputs
 - [x] Construct tx
-- [x] Brodcast tx
+- [x] Broadcast tx
 
 ## Usage
 
