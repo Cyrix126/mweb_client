@@ -1,8 +1,11 @@
 library;
 
+import 'dart:async';
+
 import 'package:grpc/grpc.dart';
 import 'package:mweb_client/src/generated/mwebd.pbgrpc.dart';
-import 'dart:async';
+
+export 'src/generated/mwebd.pbgrpc.dart';
 
 class MwebClient {
   RpcClient _rpcClient;
@@ -132,7 +135,7 @@ class MwebClient {
     try {
       return await _rpcClient.broadcast(request);
     } on GrpcError catch (e) {
-      throw 'error from broadcast mweb: $e';
+      throw 'Error from broadcast mweb: $e';
     } catch (e) {
       throw 'Error getting utxos: $e';
     }
