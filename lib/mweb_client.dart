@@ -41,7 +41,7 @@ class MwebClient {
           spendPubkey: spendPub,
         ),
       );
-      return resp.toString();
+      return resp.address.first;
     } on GrpcError catch (e) {
       throw 'Caught grpc error: ${e.message}';
     } catch (e) {
@@ -50,7 +50,7 @@ class MwebClient {
   }
 
   /// Get a batch of addresses for an account
-  Future<String> addresses(
+  Future<List<String>> addresses(
     List<int> scanSecret,
     List<int> spendPub,
     int fromIndex,
@@ -65,7 +65,7 @@ class MwebClient {
           spendPubkey: spendPub,
         ),
       );
-      return resp.toString();
+      return resp.address;
     } on GrpcError catch (e) {
       throw 'Caught grpc error: ${e.message}';
     } catch (e) {

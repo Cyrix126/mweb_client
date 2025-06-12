@@ -1,6 +1,6 @@
 name: mweb_client
 description: client library for interacting with a mwebd server
-version: 0.1.0
+version: 0.2.0
 repository: https://github.com/Cyrix126/mweb_client
 
 environment:
